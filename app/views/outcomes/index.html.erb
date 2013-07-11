@@ -1,0 +1,15 @@
+<h1>Listing outcomes</h1>
+ 
+<table>
+  <tr>
+    <th>Winner</th>
+    <th>Loser</th>
+  </tr>
+ 
+  <% @outcomes.each do |outcome| %>
+    <tr>
+      <td><%= outcome.winner %></td>
+      <td><%= outcome.loser %></td>
+    </tr>
+  <% end %>
+</table>
