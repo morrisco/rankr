@@ -26,14 +26,20 @@ class OutcomesController < ApplicationController
 	end
 
 	def update
-		@outcome = Outcome.find(parmas[:id])
+		@outcome = Outcome.find(params[:id])
 		
-		if @outcome.update(outcome_params)
+		if @outcome.update(params[:outcome].permit(:winner, :loser))
 			redirect_to @outcome
 		else
 			render 'edit'
 		end
 	end
+
+	def destroy
+		@outcome = Outcome.find(params[:id])
+		@outcome.destroy
+		redirect_to outcomes_path
+end
 
 	private
 		def outcome_params

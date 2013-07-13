@@ -7,14 +7,17 @@
     <th>Loser</th>
 		<th></th>
 		<th></th>
+		<th></th>
   </tr>
  
   <% @outcomes.each do |outcome| %>
     <tr>
       <td><%= outcome.winner %></td>
       <td><%= outcome.loser %></td>
-			<td><%= link_to 'Show', outcome_path %></td>
+			<td><%= link_to 'Show', outcome_path(outcome) %></td>
 			<td><%= link_to 'Edit', edit_outcome_path(outcome) %></td>
+			<td><%= link_to 'Delete', outcome_path(outcome),
+																	method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

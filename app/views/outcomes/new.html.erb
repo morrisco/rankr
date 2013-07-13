@@ -1,30 +1,5 @@
 <h1>New outcome</h1>
 
-    <%= form_for :outcome, url: outcomes_path do |f| %>
-		<% if @outcome.errors.any? %>
-			<div id="errorExplanation">
-			<h2><%= pluralize(@outcome.errors.count, "error") %> prohibited
-      		this outcome from being saved:</h2>
-			<ul>
-			<% @outcome.errors.full_messages.each do |msg| %>
-      			<li><%= msg %></li>
-			<% end %>
-			</ul>
-			</div>
-		<% end %>
-  	<p>
-    	<%= f.label :winner %><br>
-    	<%= f.text_field :winner %>
-    </p>
- 
-	<p>
-    	<%= f.label :loser %><br>
-    	<%= f.text_field :loser %>
-	</p>
-  
-	<p>
-    	<%= f.submit %>
-	</p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', outcomes_path %>
