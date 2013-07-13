@@ -1,15 +1,20 @@
 <h1>Listing outcomes</h1>
  
+<%= link_to 'New outcome', new_outcome_path %>
 <table>
   <tr>
     <th>Winner</th>
     <th>Loser</th>
+		<th></th>
+		<th></th>
   </tr>
  
   <% @outcomes.each do |outcome| %>
     <tr>
       <td><%= outcome.winner %></td>
       <td><%= outcome.loser %></td>
+			<td><%= link_to 'Show', outcome_path %></td>
+			<td><%= link_to 'Edit', edit_outcome_path(outcome) %></td>
     </tr>
   <% end %>
 </table>
