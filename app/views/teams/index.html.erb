@@ -1,0 +1,18 @@
+<h1>List of teams</h1>
+
+<%= link_to 'New Team', new_team_path %>
+ 
+<table>
+  <tr>
+    <th>Team Name</th>
+		<th></th>
+  </tr>
+ 
+  <% @teams.each do |team| %>
+    <tr>
+      <td> - <%= team.name %></td>
+			<td><%= link_to 'Show', team_path(team) %></td>
+			<td><%= link_to 'Edit', edit_team_path(team) %></td>
+    </tr>
+  <% end %>
+</table>
